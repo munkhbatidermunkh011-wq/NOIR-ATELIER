@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noir Atelier — Old Money Apparel</title>
+
+  <!-- Luxury Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       ROOT / COLORS
+    ========================== */
+    :root{
+      --bg-main:#0b0b0b;
+      --bg-soft:#141414;
+      --bg-card:#111111;
+      --gold:#C9A24D;
+      --text-main:#E8E6E3;
+      --text-muted:#9C968C;
+      --border-soft:rgba(255,255,255,0.05);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+
+    body{
+      min-height:100vh;
+      font-family:Inter, system-ui, Arial;
+      color:var(--text-main);
+      background:
+        radial-gradient(ellipse at center,
+          #1b1b1b 0%,
+          #121212 45%,
+          #0b0b0b 100%
+        );
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:32px 20px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      height:54px;
+      width:auto;
+    }
+
+    .brand h1{
+      font-family:'Playfair Display', serif;
+      font-size:22px;
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:20px;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      color:var(--text-muted);
+      transition:color .3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      margin-bottom:80px;
+    }
+
+    .hero-box{
+      background:linear-gradient(180deg,#1a1a1a,#111111);
+      padding:40px;
+      border-radius:20px;
+      border:1px solid var(--border-soft);
+      box-shadow:0 20px 50px rgba(0,0,0,.8);
+    }
+
+    .hero h2{
+      font-family:'Playfair Display', serif;
+      font-size:46px;
+      margin:0 0 10px;
+      letter-spacing:1px;
+    }
+
+    .hero span{
+      color:var(--gold);
+    }
+
+    .hero p{
+      color:var(--text-muted);
+      line-height:1.7;
+      margin-bottom:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:12px;
+      border:2px solid var(--gold);
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:var(--gold);
+      color:#000;
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .mini-card{
+      display:flex;
+      gap:16px;
+      background:linear-gradient(180deg,#181818,#101010);
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--border-soft);
+    }
+
+    .mini-card img{
+      width:90px;
+      height:90px;
+      object-fit:cover;
+      border-radius:12px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-bottom:80px;
+    }
+
+    .product{
+      background:linear-gradient(180deg,#181818,#0f0f0f);
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--border-soft);
+      box-shadow:0 16px 40px rgba(0,0,0,.7);
+      transition:transform .3s;
+    }
+
+    .product:hover{transform:translateY(-6px)}
+
+    .product img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:14px;
+      margin-bottom:14px;
+    }
+
+    .product h3{
+      font-family:'Playfair Display', serif;
+      margin:0 0 6px;
+    }
+
+    .price{color:var(--gold);font-weight:600}
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:24px;
+      border-top:1px solid var(--border-soft);
+      color:var(--text-muted);
+      font-size:14px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .products{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:600px){
+      .products{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero h2{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- NAV -->
+    <nav>
+      <div class="brand">
+        <img src="https://scontent.fuln6-2.fna.fbcdn.net/v/t1.15752-9/597353297_2045138229665079_7148990435269898354_n.png?stp=dst-png_s480x480&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ed3QuXiZCyIQ7kNvwEK-g8B&_nc_oc=AdkVNhbHBFa1sz1pgVrT18xY829NyOvpSgYEdfUWQPYSmpgiOu-jwBTjJJBkcAIbsn9Rbwk5S8RJgZKWvgxL4slD&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuln6-2.fna&oh=03_Q7cD4AFoCUkJcAOPoInJWOJEpu3YwvFkH-o-ZOwjHdalOIRMYg&oe=69789EE8" alt="Noir Atelier Logo">
+        <h1>NOIR ATELIER</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#">Collections</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-box">
+        <h2>Old Money<br><span>Luxury Apparel</span></h2>
+        <p>Timeless silhouettes, premium fabrics, and understated luxury inspired by heritage tailoring. Noir Atelier defines modern old-money elegance.</p>
+        <a class="btn" href="#">Explore Collection</a>
+      </div>
+
+      <div class="hero-right">
+        <div class="mini-card">
+          <img src="https://i.pinimg.com/1200x/96/49/12/9649122fccb4ceee1e9923f48aa7c419.jpg">
+          <div>
+            <div>Heritage Blazer</div>
+            <div class="price">889,000₮</div>
+          </div>
+        </div>
+        <div class="mini-card">
+          <img src="https://i.pinimg.com/1200x/a5/86/a1/a586a1f8fb928c02914bfbe4a7953df3.jpg">
+          <div>
+            <div>Cashmere Knit</div>
+            <div class="price">650,000₮</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+      <div class="product">
+        <img src="https://i.pinimg.com/736x/ac/cd/7c/accd7cc051c1ea9b60d63c61c49f31ba.jpg">
+        <h3>The Regent Coat</h3>
+        <div class="price">1,150,000₮</div>
+      </div>
+      <div class="product">
+        <img src="https://i.pinimg.com/736x/77/b8/74/77b8740815fa942a4087ffeeb04357c6.jpg">
+        <h3>Savile Sweater</h3>
+        <div class="price">700,000₮</div>
+      </div>
+      <div class="product">
+        <img src="https://i.pinimg.com/1200x/72/a8/ef/72a8ef44f45ed7527b60457ca0d636e6.jpg">
+        <h3>Curbside Trousers</h3>
+        <div class="price">500,000₮</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="year"></span> Noir Atelier</div>
+      <div>Old Money Apparel</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
